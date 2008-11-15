@@ -7,6 +7,10 @@ module Integrity
     class Jabber < Notifier::Base
       attr_reader :recipients
 
+      def self.to_haml
+        File.read File.dirname(__FILE__) / "config.haml"
+      end
+      
       def initialize(build, config = {})
         @server = ::Jabber::Simple.new(config.delete(:user), config.delete(:pass))
         @recipients = config[:recipients].nil? ? [] : config.delete(:recipients).split(/\s+/) 
