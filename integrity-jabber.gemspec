@@ -9,7 +9,6 @@ Gem::Specification.new do |s|
   s.authors           = ['Pier-Hugues Pellerin']
   s.has_rdoc          = false
   s.files             = %w(
-                          Rakefile
                           lib/notifier/config.haml
                           lib/notifier/jabber.rb
                         )
