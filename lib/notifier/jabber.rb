@@ -13,6 +13,7 @@ module Integrity
       
       def initialize(build, config = {})
         @server = ::Jabber::Simple.new(config.delete("user"), config.delete("pass"))
+        sleep 4
         @recipients = config["recipients"].nil? ? [] : config.delete("recipients").split(/\s+/) 
         super
       end
